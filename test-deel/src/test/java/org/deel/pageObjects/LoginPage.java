@@ -12,8 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginPage extends BasePOM{
 
-    private final WebDriverWait wait = WebUtility.getWait();
-
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -24,12 +22,8 @@ public class LoginPage extends BasePOM{
     @FindBy(how= How.NAME,using="password")
     WebElement password;
 
-    @FindBy(how= How.XPATH,using="/html/body/div[1]/div[2]/div[3]/div/div/div/form/button")
+    @FindBy(how= How.CLASS_NAME,using="mt-10")
     WebElement submitButton;
-
-    public void viewLoginPage(){
-        wait.until(ExpectedConditions.visibilityOf(submitButton));
-    }
 
     public WebElement getEmailInput(){
         return email;

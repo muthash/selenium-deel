@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateAccountPage extends BasePOM{
 
-    private final WebDriverWait wait = WebUtility.getWait();
-
     public CreateAccountPage(WebDriver driver) {
         super(driver);
     }
@@ -22,15 +20,15 @@ public class CreateAccountPage extends BasePOM{
     @FindBy(how= How.XPATH,using="/html/body/div[1]/div/div[2]/div/div/div/div[2]/button")
     WebElement individualBox;
 
-    @FindBy(how= How.XPATH,using="/html/body/div[1]/div/div[2]/div/div/div/div[3]/a/button")
+    @FindBy(how= How.CLASS_NAME,using="mt-2")
     WebElement nextButton;
-
-    public void viewCreateAccountPage(){
-        wait.until(ExpectedConditions.visibilityOf(entityBox));
-    }
 
     public WebElement getIndividualBox(){
         return individualBox;
+    }
+
+    public WebElement getEntityBox() {
+        return entityBox;
     }
 
     public WebElement getNextButton(){
