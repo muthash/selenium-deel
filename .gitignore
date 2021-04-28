@@ -40,6 +40,8 @@ local.properties
 
 # sbteclipse plugin
 .target
+test-deel/target/
+test-deel/src/test/resources/org/deel/webScreenshots/
 
 # Tern plugin
 .tern-project
