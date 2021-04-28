@@ -5,6 +5,6 @@ Feature: Web [Insert Feature Name Here]
 
   Scenario: [Scenario Name] Example: Successful Login
     Given I have opened the Browser
-    And I do something in the Website
-    When I do this in the Website
-    Then This should happen
+    Then I input the email
+    Then I input the password
+    And I click submit

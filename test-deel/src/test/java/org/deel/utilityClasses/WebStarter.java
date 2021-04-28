@@ -12,6 +12,12 @@ public class WebStarter {
 
         // Starts the Web Browser
         WebUtility.startWebBrowser(WebUtility.getValue("web.browser"));
+        String urlBase = WebUtility.getValue("baseUrl");
+
+        if (urlBase == null) {
+            urlBase = "google.com";
+        }
+        WebUtility.getDriver().get(urlBase);
     }
 
     @After
@@ -22,7 +28,7 @@ public class WebStarter {
         }
 
         // Close the Web Browser
-        WebUtility.getDriver().quit();
+//        WebUtility.getDriver().quit();
     }
 
 }
