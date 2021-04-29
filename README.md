@@ -13,6 +13,7 @@ Cucumber and Gherkin.
 2. Fill the 'web.browser' Property with the Browser you wish to use (CHROME / FIREFOX);
 3. Fill the 'web.system' Property with the Operating System you're using (WINDOWS / MACOS);
 4. Go to 'pom.xml' and Import Maven Dependencies / Turn ON Auto Import.
+5. To Run the tests navigate to src/test/java/org/deel package and click the "RunWebTest" file
 
 **Notes:**
 - This Repository is a Maven Project;
