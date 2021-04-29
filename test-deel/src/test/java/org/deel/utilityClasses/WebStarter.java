@@ -3,6 +3,7 @@ package org.deel.utilityClasses;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 
 public class WebStarter {
 
@@ -20,6 +21,16 @@ public class WebStarter {
         WebUtility.getDriver().get(urlBase);
     }
 
+    @Then("I visit the deel dev url")
+    public void visitURL() {
+        String urlBase = WebUtility.getValue("baseUrl");
+
+        if (urlBase == null) {
+            urlBase = "google.com";
+        }
+        WebUtility.getDriver().get(urlBase);
+    }
+
     @After
     public void closeWebBrowser(Scenario scenario) {
 
@@ -28,7 +39,7 @@ public class WebStarter {
         }
 
         // Close the Web Browser
-//        WebUtility.getDriver().quit();
+        WebUtility.getDriver().quit();
     }
 
 }

@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class WebUtility {
@@ -48,22 +49,16 @@ public class WebUtility {
 
     }
 
-    // Web Utility Methods
-    public static WebElement findElementByClassAndText(String elementClass, String elementText) {
-
-        String xpath = "//*[contains(@class, '" + elementClass + "')]//*[contains(text(),'" + elementText + "')]";
-        return driver.findElement(By.xpath(xpath));
-    }
-
-    public static WebElement findElementByDataTestID(String elementText) {
-
-        return driver.findElement(By.xpath("//*[@data-test-id='" + elementText + "']"));
-    }
-
     public static String randomNumber() {
 
         int randomNumber = (int) (Math.random() * 999999);
         return Integer.toString(randomNumber);
+    }
+
+    public static String getRandomEmail() {
+        Random randomGenerator = new Random();
+        int randomInt = randomGenerator.nextInt(10000);
+        return "username"+ randomInt +"@gmail.com";
     }
 
     public static void takeScreenshot() {
